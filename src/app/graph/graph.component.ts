@@ -9,7 +9,7 @@ import { PointService } from '../point.service';
 })
 export class GraphComponent implements OnInit {
 
-  dashes = Array<number>();
+  readonly dashes = Array<number>();
   r = 0;
   Dpath = "";
   points: Point[] = [];

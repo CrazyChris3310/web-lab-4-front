@@ -1,1 +1,20 @@
-<p>result-table works!</p>
+<div class="results-table-area">
+    <table id="table-with-data" class="results" *ngIf="!isEmpty">
+        <tr>
+            <th>X Координата</th>
+            <th>Y Координата</th>
+            <th>Радиус</th>
+            <th>Дата проверки</th>
+            <th>Время работы скрипта</th>
+            <th>Попадание</th>
+        </tr>
+        <tr *ngFor="let point of points">
+            <td>{{point.x}}</td>
+            <td>{{point.y}}</td>
+            <td>{{point.radius}}</td>
+            <td>{{point.date}}</td>
+            <td>{{point.duration}}</td>
+            <td>{{point.hit ? "Да" : "Нет"}}</td>
+        </tr>
+    </table>
+</div>

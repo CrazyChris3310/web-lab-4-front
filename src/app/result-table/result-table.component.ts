@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ExtendedPoint } from '../Point';
+import { PointService } from '../point.service';
 
 @Component({
   selector: 'app-result-table',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultTableComponent implements OnInit {
 
-  constructor() { }
+  isEmpty = false;
+  points: ExtendedPoint[] = []
+
+  constructor(private pointService: PointService ) { }
 
   ngOnInit(): void {
+    this.getPoints();
+  }
+
+  getPoints() {
+    this.pointService.getPoints().subscribe(points => this.points = points);
   }
 
 }
