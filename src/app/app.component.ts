@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lab4-frontend';
+  radius = 0;
+
+  updateRadius(newRad: string) {
+    this.radius = Number.parseInt(newRad);
+  }
 }

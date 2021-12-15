@@ -1,13 +1,17 @@
 <div class="container-text">
-    <form id="point-form">
-        <label for="y-input">Координата X: </label>
-        <input type="text" id="y-input" class="input y-input" placeholder="Введите число от -5 до 3">
+    <div id="point-form">
+        <label for="x-input">Координата X: </label>
+        <p-selectButton id="x-input"  [options]="range" [(ngModel)]="xCord"></p-selectButton>
 
-        <label for="raius">Радиус</label>
-        <input type="text" id="radius" class="input" placeholder="Введите число от 1 до 4">
+        <label for="y-input">Координата Y: {{yCord}}</label>
+        <p-slider [(ngModel)]="yCord" [min]="0" [max]="5" [step]="0.1"></p-slider>
+       
+        <label for="raius">Радиус: </label>
+        <p-selectButton id="radius" [options]="range" [(ngModel)]="radius" (onChange)="onChange()"></p-selectButton>
+        
 
-        <input type="submit" value="Проверить">
-        <input type="submit" value="Очистить">
+        <button pButton type="button" label="Проверить" class="form-button"></button>
+        <button pButton type="button" label="Очистить" class="form-button" (click)="clear()"></button>
 
-    </form>
+    </div>
 </div>

@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="main-container">
   <div class="container">
-    <app-form></app-form>
-    <app-graph></app-graph>
+    <app-form (onRadiusChange)="updateRadius($event)" ></app-form>
+    <app-graph [radius]="radius" ></app-graph>
   </div>
   <app-result-table></app-result-table>
 </div>

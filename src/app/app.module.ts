@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {SliderModule} from 'primeng/slider';
+import {ButtonModule} from 'primeng/button';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,7 +20,11 @@ import { GraphComponent } from './graph/graph.component';
     GraphComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    SelectButtonModule,
+    SliderModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

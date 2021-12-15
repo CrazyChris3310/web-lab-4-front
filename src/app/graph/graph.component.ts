@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Point } from '../Point';
 import { PointService } from '../point.service';
+import { Input } from '@angular/core'; 
 
 @Component({
   selector: 'app-graph',
@@ -14,19 +15,18 @@ export class GraphComponent implements OnInit {
   Dpath = "";
   points: Point[] = [];
 
+  @Input() set radius(num: number) {
+    this.r = num;
+    this.updateDpath();
+  }
+
   constructor(private pointService: PointService) { }
 
   ngOnInit(): void {
     for (let i = 30; i <= 270; i += 30) {
       this.dashes.push(i);
     }
-    this.r = 4;
-    this.updateDpath();
     this.pointService.getPoints().subscribe(points => this.points = points);
-  }
-
-  setRadius(radius: number) {
-    this.r = radius;
   }
 
   updateDpath() {
