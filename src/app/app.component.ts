@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   radius = 0;
 
-  updateRadius(newRad: string) {
-    this.radius = Number.parseInt(newRad);
+  updateRadius(newRad: number) {
+    this.radius = newRad;
   }
 }

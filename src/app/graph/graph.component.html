@@ -83,7 +83,7 @@
   />
 
   <circle 
-    *ngFor="let point of points" [attr.cx]="point.x" [attr.cy]="point.y" r="5" attr.fill="{{point.hit ? 'green' : 'red'}}"
+    *ngFor="let point of points" [attr.cx]="point.x * 30 + 150" [attr.cy]="-point.y * 30 + 150" r="5" attr.fill="{{point.hit ? 'green' : 'red'}}"
   />
 
 

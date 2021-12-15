@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import {SelectButtonModule} from 'primeng/selectbutton';
 import {SliderModule} from 'primeng/slider';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,9 +27,11 @@ import { GraphComponent } from './graph/graph.component';
     FormsModule,
     SelectButtonModule,
     SliderModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
